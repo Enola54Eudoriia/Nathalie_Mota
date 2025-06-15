@@ -1,0 +1,67 @@
+body {
+  text-transform: uppercase;
+}
+
+// PC styles (desktop)
+h1 {
+  font-family: $font-space-mono;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 96px;
+  line-height: 100%;
+}
+
+h2 {
+  font-family: $font-space-mono;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 66px;
+  line-height: 58px;
+}
+
+h3 {
+  font-family: $font-space-mono;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 10%;
+}
+
+.photo-description {
+  font-family: $font-space-mono;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 10%;
+}
+
+p {
+  font-family: $font-poppins;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  h1 {
+    font-family: $font-space-mono;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 27.59px;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-family: $font-space-mono;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 46px;
+    line-height: 48px;
+  }
+
+  // h3, photo-description, p restent identiques au desktop
+}

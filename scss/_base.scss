@@ -1,0 +1,7 @@
+body {
+  text-transform: $text-uppercase;
+}
+
+body.admin-bar .site-header {
+  margin-top: 46px; // hauteur de la barre admin WP
+}
