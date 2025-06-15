@@ -1,0 +1,110 @@
+#contact-modal.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+
+    &.hidden {
+        display: none;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 0 2rem;
+        max-width: 600px;
+        width: 90%;
+        font-family: $font-poppins;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+        max-height: 769px;
+        overflow-y: hidden;
+
+        // Conteneur titres "Contact" répétés 6 fois en 2 lignes
+        .modal-titles-container {
+            display: grid;
+            grid-template-columns: repeat(3, max-content);
+            grid-template-rows: repeat(2, auto);
+            justify-content: center; // Aligné à droite
+            align-items: center;
+            row-gap: 0;
+            padding-right: 0; // Optionnel : pour pas coller au bord
+            line-height: 0.8;
+            max-width: 100%;
+
+            &> :nth-child(-n + 3) {
+                transform: translateX(-10px);
+            }
+
+            &> :nth-child(n + 4) {
+                transform: translateX(10px);
+            }
+
+            .modal-title {
+                font-size: 86px; // Ou ce qui est dans ta maquette
+                font-style: italic;
+                font-weight: 400;
+                font-family: $font-space-mono;
+                margin: 0;
+                white-space: nowrap;
+            }
+        }
+
+        // Reste de ton CSS inchangé...
+        .wpforms-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%; // pour forcer l’étirement
+            max-width: 100%; // ou fixe une limite si besoin, ex : 500px
+            padding: 0 1rem;
+        }
+
+        .wpforms-field-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .wpforms-required-label {
+            display: none;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            resize: vertical;
+            max-width: 100%;
+        }
+
+        .wpforms-submit {
+            background-color: #D9D9D9;
+            color: #000;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: #bbb;
+            }
+        }
+    }
+
+    
+}

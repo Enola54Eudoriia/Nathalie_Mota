@@ -8,9 +8,10 @@
       </ul>
     </nav>
   </div>
+  <?php get_template_part('template_parts/contact-modal'); ?>
 
   <?php wp_footer(); ?>
 </footer>
 </body>
-</html>
 
+</html>
