@@ -61,7 +61,6 @@ h3 {
   font-style: normal;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 10%;
 }
 
 p {
@@ -90,6 +89,162 @@ body.admin-bar .site-header {
   margin-top: 32px;
 }
 
+#single-photo {
+  min-height: 100vh;
+  padding: 2vh 4vw;
+  margin-top: 10vh;
+}
+#single-photo .photo-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+#single-photo .photo-main .photo-title {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  max-width: 420px;
+}
+#single-photo .photo-main .photo-details {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 44px;
+  justify-content: flex-end;
+}
+#single-photo .photo-main .photo-details p {
+  text-transform: uppercase;
+  margin: 0;
+}
+#single-photo .photo-main .photo-image {
+  flex: 1 1 50%;
+  max-width: 560px;
+}
+#single-photo .photo-main .photo-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+#single-photo .photo-main .photo-contact-block {
+  flex: 1 1 100%;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+#single-photo .photo-main .photo-contact-block .photo-contact-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+#single-photo .photo-main .photo-contact-block .photo-contact-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  text-transform: none;
+}
+#single-photo .photo-main .photo-contact-block .photo-contact-button button {
+  background: #D8D8D8;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 272px;
+  height: 50px;
+}
+#single-photo .photo-main .photo-contact-block .photo-contact-button button:hover {
+  background-color: #000000;
+  color: white;
+}
+#single-photo .photo-main .photo-contact-block .photo-navigation {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+#single-photo .photo-main .photo-contact-block .photo-navigation .prev-photo a,
+#single-photo .photo-main .photo-contact-block .photo-navigation .next-photo a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+#single-photo .photo-main .photo-contact-block .photo-navigation .prev-photo a:hover,
+#single-photo .photo-main .photo-contact-block .photo-navigation .next-photo a:hover {
+  transform: scale(1.2);
+}
+#single-photo .photo-main .photo-contact-block .photo-navigation .photo-arrows {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+#single-photo .photo-main .photo-contact-block .photo-navigation .photo-preview-thumbnail img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #000;
+}
+
+.photo-apparentees {
+  margin-top: 40px;
+}
+.photo-apparentees .title-apparentees {
+  font-weight: bold;
+  font-size: 1.13rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.photo-apparentees .apparentees-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.photo-apparentees .photo-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.photo-apparentees .photo-block .photo-thumbnail-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+.photo-apparentees .photo-block .photo-thumbnail-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.photo-apparentees .photo-block .photo-thumbnail-link .hover-icons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.photo-apparentees .photo-block .photo-thumbnail-link .hover-icons span {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #000;
+  user-select: none;
+}
+.photo-apparentees .photo-block .photo-thumbnail-link:hover .hover-icons {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .site-header {
   background: white;
   height: 80px;
@@ -98,7 +253,7 @@ body.admin-bar .site-header {
   width: 100%;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 .site-header .container {
   max-width: 1440px;
@@ -204,6 +359,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #000000;
 }
 footer nav.footer-nav ul {
   display: flex;
@@ -304,6 +460,61 @@ footer nav.footer-nav ul li a:hover {
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  #single-photo {
+    padding: 2vh 5vw;
+  }
+  #single-photo .photo-main {
+    flex-direction: column;
+  }
+  #single-photo .photo-main .photo-image,
+  #single-photo .photo-main .photo-details {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  #single-photo .photo-main .photo-image {
+    max-height: 60vh;
+  }
+  #single-photo .photo-main .photo-image img {
+    object-fit: contain;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-contact-text,
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-contact-button,
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-navigation {
+    flex: none;
+    width: 100%;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-contact-text {
+    font-size: 0.75rem;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-contact-button button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-navigation {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-navigation .prev-photo a,
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-navigation .next-photo a {
+    font-size: 1.2rem;
+  }
+  #single-photo .photo-main .photo-details .photo-contact-block .photo-navigation .photo-preview-thumbnail img {
+    width: 50px;
+  }
+  .photo-apparentees .apparentees-list {
+    grid-template-columns: 1fr;
+  }
+  .photo-apparentees .title-apparentees {
+    text-align: center;
   }
 }
 #contact-modal.modal {

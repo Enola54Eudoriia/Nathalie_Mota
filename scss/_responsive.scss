@@ -99,3 +99,84 @@
     }
   }
 }
+
+
+
+// ==========================
+// RESPONSIVE
+// ==========================
+
+@media screen and (max-width: 768px) {
+  #single-photo {
+    padding: 2vh 5vw;
+
+    .photo-main {
+      flex-direction: column;
+
+      .photo-image,
+      .photo-details {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      .photo-image {
+        max-height: 60vh;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      .photo-details {
+        .photo-contact-block {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 1.5rem;
+
+          .photo-contact-text,
+          .photo-contact-button,
+          .photo-navigation {
+            flex: none;
+            width: 100%;
+          }
+
+          .photo-contact-text {
+            font-size: 0.75rem;
+          }
+
+          .photo-contact-button {
+            button {
+              width: 100%;
+              padding: 0.8rem 1rem;
+            }
+          }
+
+          .photo-navigation {
+            justify-content: center;
+            gap: 1.5rem;
+
+            .prev-photo a,
+            .next-photo a {
+              font-size: 1.2rem;
+            }
+
+            .photo-preview-thumbnail img {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .photo-apparentees {
+    .apparentees-list {
+      grid-template-columns: 1fr;
+    }
+
+    .title-apparentees {
+      text-align: center;
+    }
+  }
+}

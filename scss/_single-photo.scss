@@ -1,0 +1,190 @@
+// ==========================
+// PAGE : SINGLE PHOTO
+// ==========================
+
+#single-photo {
+    min-height: 100vh;
+    padding: 2vh 4vw;
+    margin-top: 10vh;
+
+    .photo-main {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+
+        .photo-title {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            max-width: 420px;
+        }
+
+        .photo-details {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-bottom: 44px;
+            justify-content: flex-end;
+
+            p {
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+
+        .photo-image {
+            flex: 1 1 50%;
+            max-width: 560px;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .photo-contact-block {
+            flex: 1 1 100%;
+            margin-top: 2rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid $black;
+            border-bottom: 1px solid $black;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: space-between;
+
+            .photo-contact-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 2rem; // espace entre texte et bouton
+            }
+
+            .photo-contact-text {
+                font-family: $font-poppins;
+                font-size: 0.85rem;
+                text-transform: none;
+            }
+
+            .photo-contact-button {
+                button {
+                    background: $mid-grey;
+                    color: black;
+                    border: none;
+                    padding: 8px 15px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    width: 272px;
+                    height: 50px;
+
+                    &:hover {
+                        background-color: $black;
+                        color: white;
+                    }
+                }
+            }
+
+            .photo-navigation {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+
+                .prev-photo a,
+                .next-photo a {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    color: black;
+                    text-decoration: none;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+
+                .photo-arrows {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 12px;
+                }
+
+                .photo-preview-thumbnail img {
+                    width: 50px;
+                    height: auto;
+                    object-fit: cover;
+                    border: 1px solid #000;
+                }
+            }
+        }
+    }
+}
+
+
+
+// ==========================
+// PARTIE : PHOTO APPARENTÉES 
+// ==========================
+
+.photo-apparentees {
+    margin-top: 40px;
+
+    .title-apparentees {
+        font-weight: bold;
+        font-size: 1.13rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .apparentees-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .photo-block {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        cursor: pointer;
+
+        .photo-thumbnail-link {
+            display: block;
+            position: relative;
+            text-decoration: none;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 6px;
+                object-fit: cover;
+            }
+
+            .hover-icons {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                gap: 10px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+
+                span {
+                    background: rgba(255, 255, 255, 0.8);
+                    padding: 6px 8px;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    color: #000;
+                    user-select: none;
+                }
+            }
+
+            &:hover .hover-icons {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+}

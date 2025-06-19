@@ -8,27 +8,24 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const openModalBtns = document.querySelectorAll('.open-contact-modal');
-  const modal = document.getElementById('contact-modal');
+jQuery(document).ready(function($) {
+  $('.open-contact-modal').on('click', function(e) {
+    e.preventDefault();
 
-  openModalBtns.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      modal.classList.remove('hidden');
+    var ref = $(this).data('reference');
+    $('#contact-modal').removeClass('hidden');
 
-      const ref = btn.getAttribute('data-reference');
-      const refField = modal.querySelector('#wpforms-18-field_4');
-      if (refField) {
-        refField.value = ref || '';
-      }
-    });
+    var refField = $('#wpforms-18-field_4');
+    if (refField.length) {
+      refField.val(ref || '');
+    }
   });
 
-  modal.addEventListener('click', function (e) {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
+  $('#contact-modal').on('click', function(e) {
+    if (e.target === this) {
+      $(this).addClass('hidden');
     }
   });
 });
+
 
