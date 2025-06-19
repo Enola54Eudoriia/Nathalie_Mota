@@ -48,17 +48,11 @@ p {
 // Mobile styles
 @media (max-width: 768px) {
   h1 {
-    font-family: $font-space-mono;
-    font-weight: 700;
-    font-style: italic;
     font-size: 27.59px;
     line-height: 100%;
   }
 
   h2 {
-    font-family: $font-space-mono;
-    font-weight: 400;
-    font-style: italic;
     font-size: 46px;
     line-height: 48px;
   }

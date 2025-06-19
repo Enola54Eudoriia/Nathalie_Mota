@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("./assets/fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("./assets/fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("./assets/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   text-transform: uppercase;
 }
@@ -46,16 +74,10 @@ p {
 
 @media (max-width: 768px) {
   h1 {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: italic;
     font-size: 27.59px;
     line-height: 100%;
   }
   h2 {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: italic;
     font-size: 46px;
     line-height: 48px;
   }
@@ -65,7 +87,7 @@ body {
 }
 
 body.admin-bar .site-header {
-  margin-top: 46px;
+  margin-top: 32px;
 }
 
 .site-header {
@@ -79,7 +101,7 @@ body.admin-bar .site-header {
   border-bottom: 1px solid #ddd;
 }
 .site-header .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -119,10 +141,10 @@ body.admin-bar .site-header {
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
-  transition: color 0.3s ease;
+  transition: font-weight 0.3s ease;
 }
 .site-header nav.main-nav ul.menu-desktop a:hover {
-  color: #E00000;
+  font-weight: 700;
 }
 .site-header .burger {
   display: none;
@@ -199,7 +221,7 @@ footer nav.footer-nav ul li a {
   text-transform: uppercase;
 }
 footer nav.footer-nav ul li a:hover {
-  color: #E00000;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -298,14 +320,14 @@ footer nav.footer-nav ul li a:hover {
 }
 #contact-modal.modal .modal-content {
   background: white;
-  padding: 0 2rem;
+  padding: 20px 2rem;
   max-width: 600px;
   width: 90%;
   font-family: "Poppins", sans-serif;
   text-align: left;
   position: relative;
   overflow: hidden;
-  max-height: 769px;
+  max-height: 790px;
   overflow-y: hidden;
 }
 #contact-modal.modal .modal-content .modal-titles-container {
@@ -337,7 +359,6 @@ footer nav.footer-nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
   width: 100%;
   max-width: 100%;
   padding: 0 1rem;
@@ -354,7 +375,7 @@ footer nav.footer-nav ul li a:hover {
 #contact-modal.modal .modal-content input[type=email],
 #contact-modal.modal .modal-content textarea {
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: 1.5rem 4.75rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -367,13 +388,13 @@ footer nav.footer-nav ul li a:hover {
   background-color: #D9D9D9;
   color: #000;
   border: none;
-  padding: 1rem 3rem;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 1rem 3.75rem;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
   font-size: 1rem;
+  height: 50px;
 }
 #contact-modal.modal .modal-content .wpforms-submit:hover {
   background-color: #bbb;

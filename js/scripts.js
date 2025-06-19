@@ -9,20 +9,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Ouverture modale
-  const openModalBtn = document.querySelector('.open-contact-modal');
+  const openModalBtns = document.querySelectorAll('.open-contact-modal');
   const modal = document.getElementById('contact-modal');
 
-  if (openModalBtn && modal) {
-    openModalBtn.addEventListener('click', function (e) {
+  openModalBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
       modal.classList.remove('hidden');
-    });
 
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) {
-        modal.classList.add('hidden');
+      const ref = btn.getAttribute('data-reference');
+      const refField = modal.querySelector('#wpforms-18-field_4');
+      if (refField) {
+        refField.value = ref || '';
       }
     });
-  }
+  });
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
 });
+
