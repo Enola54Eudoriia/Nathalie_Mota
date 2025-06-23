@@ -1,5 +1,5 @@
 <footer class="site-footer">
-  <div class="container">
+  <div>
     <nav class="footer-nav">
       <ul>
         <li><a href="#">MENTIONS LÉGALES</a></li>
@@ -12,6 +12,12 @@
 
   <?php wp_footer(); ?>
 </footer>
+<div id="fullscreen-lightbox" class="lightbox-hidden">
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Aperçu photo" id="lightbox-image">
+    </div>
+</div>
 </body>
 
 </html>

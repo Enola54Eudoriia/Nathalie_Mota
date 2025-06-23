@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="single-photo">
+<main id="single-photo" class="container">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

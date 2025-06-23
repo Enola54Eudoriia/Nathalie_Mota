@@ -4,7 +4,7 @@
 
 #single-photo {
     min-height: 100vh;
-    padding: 2vh 4vw;
+    padding: 2vh 12vw;
     margin-top: 10vh;
 
     .photo-main {
@@ -34,7 +34,6 @@
 
         .photo-image {
             flex: 1 1 50%;
-            max-width: 560px;
 
             img {
                 width: 100%;
@@ -45,19 +44,38 @@
 
         .photo-contact-block {
             flex: 1 1 100%;
-            margin-top: 2rem;
-            padding: 1.5rem 0;
-            border-top: 1px solid $black;
-            border-bottom: 1px solid $black;
             display: flex;
             align-items: center;
             gap: 1rem;
             justify-content: space-between;
+            position: relative;
+            padding: 19px 0;
+
+            // Lignes noires en haut et en bas
+            &::before,
+            &::after {
+                content: "";
+                position: absolute; // 👈 ici la ligne fait 80% de la largeur du bloc
+                height: 1px;
+                background-color: $black;
+            }
+
+            &::before {
+                top: -5px;
+                transform: translateY(-50%); // 👈 adapte à la largeur voulue comme sur la maquette
+                width: 49%;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: translateY(50%);
+                width: 100%;
+            }
 
             .photo-contact-wrapper {
                 display: flex;
                 align-items: center;
-                gap: 2rem; // espace entre texte et bouton
+                gap: 8rem;
             }
 
             .photo-contact-text {
@@ -69,7 +87,7 @@
             .photo-contact-button {
                 button {
                     background: $mid-grey;
-                    color: black;
+                    color: $black;
                     border: none;
                     padding: 8px 15px;
                     font-size: 12px;
@@ -95,7 +113,7 @@
                 .next-photo a {
                     font-size: 1.3rem;
                     font-weight: bold;
-                    color: black;
+                    color: $black;
                     text-decoration: none;
 
                     &:hover {
@@ -113,10 +131,11 @@
                     width: 50px;
                     height: auto;
                     object-fit: cover;
-                    border: 1px solid #000;
+                    border: 1px solid $black;
                 }
             }
         }
+
     }
 }
 
@@ -127,13 +146,13 @@
 // ==========================
 
 .photo-apparentees {
-    margin-top: 40px;
+    margin: 90px;
 
     .title-apparentees {
         font-weight: bold;
         font-size: 1.13rem;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 66px;
     }
 
     .apparentees-list {
@@ -147,44 +166,147 @@
         overflow: hidden;
         border-radius: 6px;
         cursor: pointer;
+        max-width: 564px;
+        max-height: 495px;
+        height: 495px;
 
         .photo-thumbnail-link {
             display: block;
             position: relative;
-            text-decoration: none;
+            width: 100%;
+            height: 100%;
 
             img {
                 width: 100%;
-                height: auto;
+                height: 100%;
                 display: block;
                 border-radius: 6px;
                 object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            // Overlay gris
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                border-radius: 6px;
+                z-index: 5;
+            }
+
+            &:hover::before {
+                opacity: 1;
             }
 
             .hover-icons {
                 position: absolute;
-                top: 10px;
-                left: 10px;
-                display: flex;
-                gap: 10px;
+                inset: 0;
+                padding: 10px;
+                z-index: 10;
                 opacity: 0;
                 transition: opacity 0.3s ease;
                 pointer-events: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-                span {
-                    background: rgba(255, 255, 255, 0.8);
-                    padding: 6px 8px;
-                    border-radius: 4px;
-                    font-size: 1rem;
-                    color: #000;
+                img {
+                    pointer-events: auto;
                     user-select: none;
+                }
+
+                .icon-fullscreen {
+                    align-self: flex-end;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                // Pour centrer parfaitement l'icône œil au milieu exact
+                .icon-eye {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 40px;
+                    height: 27px;
+                    transform: translate(-50%, -50%);
+                }
+
+                .photo-reference {
+                    align-self: flex-start;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    color: white;
+                    bottom: 10px;
+                    position: absolute;
+                }
+
+                .photo-category {
+                    align-self: flex-end;
+                    font-size: 0.9rem;
+                    color: white;
                 }
             }
 
+
             &:hover .hover-icons {
                 opacity: 1;
-                pointer-events: auto;
+            }
+
+            &:hover img {
+                transform: scale(1.05);
             }
         }
     }
+}
+
+// Lightbox
+#fullscreen-lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#fullscreen-lightbox.lightbox-hidden {
+    display: none;
+}
+
+#fullscreen-lightbox.lightbox-visible {
+    display: flex;
+}
+
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background: black;
+    border-radius: 50%;
+    padding: 4px 10px;
+    line-height: 1;
 }

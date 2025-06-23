@@ -1,4 +1,4 @@
-<div id="contact-modal" class="modal hidden">
+<div id="contact-modal" class="modal hidden container">
     <div class="modal-content">
         <div class="modal-titles-container">
             <h2 class="modal-title">Contact</h2>

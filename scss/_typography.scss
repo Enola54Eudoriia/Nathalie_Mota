@@ -44,17 +44,4 @@ p {
   line-height: 100%;
 }
 
-// Mobile styles
-@media (max-width: 768px) {
-  h1 {
-    font-size: 27.59px;
-    line-height: 100%;
-  }
 
-  h2 {
-    font-size: 46px;
-    line-height: 48px;
-  }
-
-  // h3, photo-description, p restent identiques au desktop
-}

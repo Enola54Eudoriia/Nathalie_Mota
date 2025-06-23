@@ -22,7 +22,7 @@ if ($categories && !is_wp_error($categories)) {
     $related_query = new WP_Query($args);
 
     if ($related_query->have_posts()) : ?>
-        <section class="photo-apparentees">
+        <section class="photo-apparentees container">
             <h3 class="title-apparentees">Vous aimerez aussi</h3>
             <div class="apparentees-list">
                 <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
@@ -30,15 +30,28 @@ if ($categories && !is_wp_error($categories)) {
                         <a href="<?php the_permalink(); ?>" class="photo-thumbnail-link">
                             <?php the_post_thumbnail('large'); ?>
                             <div class="hover-icons">
-                                <span class="icon-eye" title="Voir détails">👁️</span>
-                                <span class="icon-fullscreen" title="Voir en grand">🔍</span>
+                                <!-- Plein écran en haut à droite -->
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Icon_fullscreen.svg" alt="plein écran" class="icon-fullscreen" />
+
+                                <!-- Œil au centre -->
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Icon_eye.svg" alt="voir détails" class="icon-eye" />
+
+                                <!-- Référence en bas à gauche -->
+                                <span class="photo-reference">
+                                    <?php echo esc_html(get_post_meta(get_the_ID(), 'reference', true)); ?>
+                                </span>
+
+                                <!-- Catégorie en bas à droite -->
+                                <span class="photo-category">
+                                    <?php echo esc_html($categories[0]->name ?? ''); ?>
+                                </span>
                             </div>
                         </a>
                     </article>
                 <?php endwhile; ?>
             </div>
         </section>
-    <?php endif;
+<?php endif;
 
     wp_reset_postdata();
 }
