@@ -2,7 +2,6 @@
         width: 564px;
         height: 495px;
         position: relative;
-        border-radius: 6px;
         overflow: hidden;
 
         .photo-thumbnail-link {
@@ -16,7 +15,6 @@
                 height: 100%;
                 object-fit: cover;
                 display: block;
-                border-radius: 6px;
                 transition: transform 0.3s ease;
             }
 

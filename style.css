@@ -83,7 +83,6 @@ body.admin-bar .site-header {
   width: 564px;
   height: 495px;
   position: relative;
-  border-radius: 6px;
   overflow: hidden;
 }
 .photo-card .photo-thumbnail-link {
@@ -97,7 +96,6 @@ body.admin-bar .site-header {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 6px;
   transition: transform 0.3s ease;
 }
 .photo-card .photo-thumbnail-link::before {
