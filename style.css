@@ -504,6 +504,33 @@ footer nav.footer-nav ul li a:hover {
   justify-content: center;
 }
 
+.load-more-wrapper {
+  text-align: center;
+}
+
+.load-more-button {
+  display: inline-block;
+  margin: 45px 0;
+  background-color: #D8D8D8;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 272px;
+  height: 50px;
+  font-family: "Space Mono";
+  font-weight: 400;
+  font-size: 12px;
+}
+.load-more-button.loading {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.load-more-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
 #contact-modal.modal {
   display: flex;
   justify-content: center;

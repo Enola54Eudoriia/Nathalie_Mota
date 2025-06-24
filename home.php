@@ -40,6 +40,9 @@
             endif;
             ?>
         </div>
+        <div class="load-more-wrapper">
+            <button class="load-more-button" data-url="<?php echo admin_url('admin-ajax.php'); ?>" data-nonce="<?php echo wp_create_nonce('load_more_nonce'); ?>">Charger plus</button>
+        </div>
     </section>
 
 </main>

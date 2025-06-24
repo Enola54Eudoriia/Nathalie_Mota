@@ -32,3 +32,31 @@
     }
 }
 
+.load-more-wrapper {
+    text-align: center;
+}
+
+.load-more-button {
+    display: inline-block;
+    margin: 45px 0;
+    background-color: #D8D8D8;
+    color: black;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 272px;
+    height: 50px;
+    font-family: 'Space Mono';
+    font-weight: 400;
+    font-size: 12px;
+
+    &.loading {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        background-color: $black;
+        color: white;
+    }
+}
