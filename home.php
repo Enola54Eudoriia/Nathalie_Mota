@@ -22,6 +22,26 @@
         <h1>PHOTOGRAPHE EVENT</h1>
     </section>
 
+    <section id="photo-gallery">
+        <div class="gallery-grid">
+            <?php
+            $photo_query = new WP_Query([
+                'post_type' => 'photo',
+                'posts_per_page' => 8,
+            ]);
+
+            if ($photo_query->have_posts()) :
+                while ($photo_query->have_posts()) : $photo_query->the_post();
+                    get_template_part('template_parts/photo_block');
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo '<p>Aucune photo trouvée pour le moment.</p>';
+            endif;
+            ?>
+        </div>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>

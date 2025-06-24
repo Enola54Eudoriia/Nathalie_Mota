@@ -19,5 +19,16 @@
         text-shadow: none;
     }
 
-
 }
+
+#photo-gallery {
+    padding: 4rem 2rem;
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 564px);
+        gap: 30px;
+        justify-content: center;
+    }
+}
+

@@ -148,7 +148,41 @@
 
 
             <!-- ZONE DES PHOTOS APPARENTÉES -->
-            <?php get_template_part('template_parts/photo_block'); ?>
+            <?php
+            $current_id = get_the_ID();
+            $categories = get_the_terms($current_id, 'categorie_photo');
+
+            if ($categories && !is_wp_error($categories)) {
+                $category_id = $categories[0]->term_id;
+
+                $related_query = new WP_Query([
+                    'post_type' => 'photo',
+                    'posts_per_page' => 2,
+                    'post__not_in' => [$current_id],
+                    'orderby' => 'rand',
+                    'tax_query' => [
+                        [
+                            'taxonomy' => 'categorie_photo',
+                            'field' => 'term_id',
+                            'terms' => $category_id,
+                        ],
+                    ],
+                ]);
+
+                if ($related_query->have_posts()) : ?>
+                    <section class="photo-apparentees container">
+                        <h3 class="title-apparentees">Vous aimerez aussi</h3>
+                        <div class="apparentees-list">
+                            <?php while ($related_query->have_posts()) : $related_query->the_post();
+                                get_template_part('template_parts/photo_block');
+                            endwhile; ?>
+                        </div>
+                    </section>
+            <?php
+                endif;
+                wp_reset_postdata();
+            }
+            ?>
 
     <?php endwhile;
     endif; ?>
