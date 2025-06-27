@@ -1,7 +1,10 @@
 <?php
 $current_id = get_the_ID();
+// Récupère la catégorie principale de la photo
 $categories = get_the_terms($current_id, 'categorie_photo');
 $category_name = $categories && !is_wp_error($categories) ? $categories[0]->name : '';
+
+// Récupère la référence personnalisée de la photo
 $reference = get_post_meta($current_id, 'reference', true);
 ?>
 
@@ -10,7 +13,7 @@ $reference = get_post_meta($current_id, 'reference', true);
        class="photo-thumbnail-link"
        data-ref="<?php echo esc_attr($reference); ?>"
        data-cat="<?php echo esc_attr($category_name); ?>">
-
+       
         <?php the_post_thumbnail('medium-large'); ?>
 
         <div class="hover-icons">
@@ -20,7 +23,6 @@ $reference = get_post_meta($current_id, 'reference', true);
         </div>
     </a>
 
-    <!-- L’icône fullscreen est maintenant en dehors du lien -->
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Icon_fullscreen.svg"
          alt="plein écran"
          class="icon-fullscreen"
