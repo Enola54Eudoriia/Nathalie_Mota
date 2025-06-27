@@ -22,6 +22,53 @@
         <h1>PHOTOGRAPHE EVENT</h1>
     </section>
 
+    <section id="photo-filters">
+        <form id="filters-form">
+            <div class="filters-left">
+                <div class="custom-select" data-filter-type="category">
+                    <div class="selected" data-value="">Catégories</div>
+                    <ul class="options-list">
+                        <li data-value="">Catégories</li> <!-- Option "Tous" ajoutée -->
+                        <?php
+                        $categories = get_terms([
+                            'taxonomy' => 'categorie_photo',
+                            'hide_empty' => false,
+                        ]);
+                        foreach ($categories as $category) {
+                            echo '<li data-value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+
+                <div class="custom-select" data-filter-type="format">
+                    <div class="selected" data-value="">Formats</div>
+                    <ul class="options-list">
+                        <li data-value="">Formats</li> <!-- Option "Tous" ajoutée -->
+                        <?php
+                        $formats = get_terms([
+                            'taxonomy' => 'format_photo',
+                            'hide_empty' => false,
+                        ]);
+                        foreach ($formats as $format) {
+                            echo '<li data-value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="custom-select" data-filter-type="sort">
+                <div class="selected" data-value="">Trier par</div>
+                <ul class="options-list">
+                    <li data-value="">Trier par</li> <!-- Option "Par défaut" ajoutée -->
+                    <li data-value="DESC">Plus récentes</li>
+                    <li data-value="ASC">Plus anciennes</li>
+                </ul>
+            </div>
+        </form>
+    </section>
+
+
     <section id="photo-gallery">
         <div class="gallery-grid">
             <?php

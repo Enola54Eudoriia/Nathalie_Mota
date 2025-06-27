@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(result => {
                 if (result.success) {
                     galleryGrid.insertAdjacentHTML('beforeend', result.data.html);
+                    document.dispatchEvent(new Event('lightboxReload'));
                     page++;
 
                     if (!result.data.has_more) {

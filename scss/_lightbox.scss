@@ -1,0 +1,103 @@
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    object-fit: contain;
+}
+
+.lightbox-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 383px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -3px;
+    right: -27px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+        width: 23px;
+        height: 32px;
+        display: block;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10000;
+
+  img {
+    width: 150px; // à adapter selon la maquette
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2); // effet lumineux
+  }
+}
+
+.lightbox-prev {
+  left: -152px;
+}
+
+.lightbox-next {
+  right: -152px;
+}
+
+
+.lightbox-close,
+.lightbox-nav {
+    z-index: 10000;
+}

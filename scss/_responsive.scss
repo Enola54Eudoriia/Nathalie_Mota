@@ -86,7 +86,7 @@
         max-width: 300px;
 
         &:hover {
-          color: lighten($red, 20%);
+          color: $red;
         }
       }
     }
