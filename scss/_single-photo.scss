@@ -13,7 +13,7 @@
         margin-bottom: 3rem;
 
         .photo-title {
-            text-transform: uppercase;
+            text-transform: $text-uppercase;
             margin-bottom: 0;
             max-width: 420px;
         }
@@ -150,7 +150,7 @@
     margin: 90px auto;
 
     .title-apparentees {
-        text-transform: uppercase;
+        text-transform: $text-uppercase;
         margin-bottom: 66px;
     }
 
