@@ -304,4 +304,50 @@
     margin: 0 auto;
     box-sizing: border-box;
   }
+
+}
+
+@media (max-width: 375px) {
+  #contact-modal.modal {
+    .modal-content {
+      padding: 1.5rem 1rem;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+
+      .modal-titles-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 0.5rem;
+        transform: none;
+
+        &>* {
+          transform: none;
+          text-align: center;
+        }
+
+        .modal-title {
+          font-size: 40px;
+          line-height: 1.1;
+        }
+      }
+
+      .wpforms-container {
+        padding: 0;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        padding: 1rem;
+        font-size: 14px;
+      }
+
+      .wpforms-submit {
+        font-size: 14px;
+        padding: 0.75rem;
+        height: auto;
+      }
+    }
+  }
 }

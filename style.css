@@ -1012,6 +1012,42 @@ footer nav.footer-nav ul li a:hover {
     box-sizing: border-box;
   }
 }
+@media (max-width: 375px) {
+  #contact-modal.modal .modal-content {
+    padding: 1.5rem 1rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  #contact-modal.modal .modal-content .modal-titles-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 0.5rem;
+    transform: none;
+  }
+  #contact-modal.modal .modal-content .modal-titles-container > * {
+    transform: none;
+    text-align: center;
+  }
+  #contact-modal.modal .modal-content .modal-titles-container .modal-title {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  #contact-modal.modal .modal-content .wpforms-container {
+    padding: 0;
+  }
+  #contact-modal.modal .modal-content input[type=text],
+  #contact-modal.modal .modal-content input[type=email],
+  #contact-modal.modal .modal-content textarea {
+    padding: 1rem;
+    font-size: 14px;
+  }
+  #contact-modal.modal .modal-content .wpforms-submit {
+    font-size: 14px;
+    padding: 0.75rem;
+    height: auto;
+  }
+}
 .container {
   max-width: 1200px;
   margin-left: auto;
