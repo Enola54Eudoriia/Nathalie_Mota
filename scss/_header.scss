@@ -2,7 +2,7 @@
   background: white;
   height: 80px;
   z-index: 50;
-  position: fixed; // ou relative si tu préfères
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -64,7 +64,7 @@
   }
 
   .burger {
-    display: none; // caché en desktop
+    display: none;
     background: none;
     border: none;
     cursor: pointer;

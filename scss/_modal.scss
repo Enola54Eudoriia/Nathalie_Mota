@@ -23,15 +23,14 @@
         max-height: 790px;
         overflow-y: hidden;
 
-        // Conteneur titres "Contact" répétés 6 fois en 2 lignes
         .modal-titles-container {
             display: grid;
             grid-template-columns: repeat(3, max-content);
             grid-template-rows: repeat(2, auto);
-            justify-content: center; // Aligné à droite
+            justify-content: center;
             align-items: center;
             row-gap: 0;
-            padding-right: 0; // Optionnel : pour pas coller au bord
+            padding-right: 0;
             line-height: 0.8;
             max-width: 100%;
 
@@ -44,7 +43,7 @@
             }
 
             .modal-title {
-                font-size: 86px; // Ou ce qui est dans ta maquette
+                font-size: 86px;
                 font-style: italic;
                 font-weight: 400;
                 font-family: $font-space-mono;
@@ -53,13 +52,12 @@
             }
         }
 
-        // Reste de ton CSS inchangé...
         .wpforms-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%; // pour forcer l’étirement
-            max-width: 100%; // ou fixe une limite si besoin, ex : 500px
+            width: 100%;
+            max-width: 100%;
             padding: 0 1rem;
         }
 
