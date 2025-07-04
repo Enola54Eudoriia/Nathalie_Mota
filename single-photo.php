@@ -5,7 +5,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
             <?php
-            // Récupération des champs personnalisés via SCF (Smart Custom Fields)
+            // Récupération des champs personnalisés via SCF 
             $type = SCF::get('type');
             $reference = SCF::get('reference');
 

@@ -3,6 +3,11 @@
     max-width: 318px;
     margin: 0 auto;
     overflow-x: hidden;
+    padding-top: 32px;
+  }
+
+  #home-hero {
+  padding-top: 80px; // ou la hauteur exacte de ton header mobile
   }
 
   .container {
@@ -40,7 +45,6 @@
     width: 100%;
     z-index: 100;
     background: white;
-    padding: 1rem 1.5rem;
 
     .container {
       padding: 0;

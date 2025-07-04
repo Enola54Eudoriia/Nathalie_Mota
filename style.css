@@ -75,10 +75,6 @@ body {
   text-transform: uppercase;
 }
 
-body.admin-bar .site-header {
-  margin-top: 32px;
-}
-
 .photo-card {
   width: 564px;
   height: 495px;
@@ -343,7 +339,7 @@ body.admin-bar .site-header {
 .site-header nav.menu-mobile.active {
   display: flex;
   position: fixed;
-  top: 123px;
+  top: 80px;
   left: 0;
   width: 100%;
   height: calc(100vh - 80px);
@@ -765,6 +761,10 @@ footer nav.footer-nav ul li a:hover {
     max-width: 318px;
     margin: 0 auto;
     overflow-x: hidden;
+    padding-top: 32px;
+  }
+  #home-hero {
+    padding-top: 80px;
   }
   .container {
     max-width: 318px;
@@ -795,7 +795,6 @@ footer nav.footer-nav ul li a:hover {
     width: 100%;
     z-index: 100;
     background: white;
-    padding: 1rem 1.5rem;
   }
   .site-header .container {
     padding: 0;
